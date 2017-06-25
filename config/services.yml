@@ -1,0 +1,18 @@
+imports:
+    - { resource: db.yml }
+
+parameters:
+    # ...
+    mailer.transport: sendmail3dd
+
+services:
+    mailer:
+        class:     Mailer
+        arguments: ['@newsletter_manager']
+    newsletter_manager:
+        class:     NewsletterManager
+        calls:
+            - [setMailer, ['mailer']]
+    listenera:
+        class:     Listernera
+        

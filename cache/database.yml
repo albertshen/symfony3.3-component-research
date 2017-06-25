@@ -1,0 +1,13 @@
+auto_connect: true
+default_connection: mysql2
+connections:
+    mysql:
+        host:     localhost
+        driver:   mysql
+        username: user
+        password: pass
+    sqlite:
+        host:     localhost
+        driver:   mysqlhhh
+        username: user
+        password: pass
