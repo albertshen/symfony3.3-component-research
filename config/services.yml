@@ -3,16 +3,18 @@ imports:
 
 parameters:
     # ...
-    mailer.transport: sendmail3dd
+    mailer.transport: sendmail
+    env(USER): ALBERT
 
 services:
     mailer:
         class:     Mailer
-        arguments: ['@newsletter_manager']
+        public:    true 
+        arguments: ['transport']
+
     newsletter_manager:
         class:     NewsletterManager
         calls:
-            - [setMailer, ['mailer']]
-    listenera:
-        class:     Listernera
+            - [setMailer, ['@mailer', '%env(USER)%']]
+
         
