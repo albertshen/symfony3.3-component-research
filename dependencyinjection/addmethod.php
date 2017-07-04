@@ -63,7 +63,7 @@ $container->setParameter('prop', 'name');
 
 $container
 	->register('srv.identity', 'Identity')
-	->addArgument('%id%');
+	->addArgument('%%%%id%%');
 
 $container
 	->register('srv.person', 'Person')
