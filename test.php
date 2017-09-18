@@ -97,52 +97,6 @@ class Test
 }
 
 
-interface Person
-{
-	public function show();
-}
-
-class Student implements Person
-{
-	private $name;
-
-	public function __construct($name)
-	{
-		$this->name = $name;
-	}
-
-	public function show()
-	{
-		echo $this->name.'穿着校服 ';
-	}
-}
-
-abstract class Decorator implements Person
-{
-	protected $person;
-
-	public function __construct(Person $person)
-	{
-		$this->person = $person;
-	}
-}
-
-class RedShow extends Decorator
-{
-	public function show()
-	{
-		echo $this->person->show() . 'reshoe ';
-	}
-}
-
-class GreeHat extends Decorator
-{
-	public function show()
-	{
-		echo $this->person->show() . 'greehat ';
-	}
-}
-
 // $student = new Student('Albert');
 
 // $redshoe = new RedShow($student);

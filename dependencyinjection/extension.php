@@ -59,6 +59,7 @@ class AcmeDemoExtension extends Extension implements CompilerPassInterface
 
     public function process(ContainerBuilder $container)
     {
+        var_dump($container->getParameter('acme_demo.FOO'));
         $container->setParameter('acme_demo.FOO', 111);
         //var_dump($container->getServiceIds());
     }
@@ -89,6 +90,7 @@ class AcmeDemo2Extension extends Extension implements CompilerPassInterface
 
     public function process(ContainerBuilder $container)
     {
+        var_dump($container->getParameter('acme_demo.FOO'));
         $container->setParameter('acme_demo.FOO', 222);
         var_dump($container->getServiceIds());
     }
